@@ -52,20 +52,34 @@ public class HomePage {
         GetFilterLocator(deals_from).click();
     }
 
-    public List<Locator> GetProductsLocator(){
-        return page.locator(".product--card").all();
-    }
+    // public List<Locator> GetProductsLocator(){
+    //     return page.locator(".product--card").all();
+    // }
 
     public void addRandomProductsToCart(int numberOfProducts){
         Random random = new Random();
-        List<Locator> allProducts = page.locator(".product--card").all();
+        List<Locator> allProducts = page.locator(".product--buy-form--container").all();
         for(int i =0; i <numberOfProducts;i++){
             int rndmIndx = random.nextInt(allProducts.size());
             Locator randomElement = allProducts.get(rndmIndx);
-            randomElement.hover();
-            randomElement.waitFor();
-            randomElement.locator("button").click();
-            page.waitForSelector(".toast.toast-success .message").waitForElementState(ElementState.STABLE);
+            if(randomElement.locator("a").isHidden()){
+                randomElement.waitFor();
+                randomElement.hover();
+                randomElement.waitFor();
+                randomElement.locator("button").click();
+                page.waitForSelector(".toast.toast-success .message").waitForElementState(ElementState.STABLE);
+            }
+            else{
+                randomElement.waitFor();
+                randomElement.hover();
+                randomElement.waitFor();
+                randomElement.locator("a").click();
+                page.getByLabel("Add to cart").click();
+                page.waitForSelector(".css-1arl00l p").waitForElementState(ElementState.VISIBLE);
+                page.goBack();
+
+            }
+            
         }
     }
     public void clickCartIcon(){
