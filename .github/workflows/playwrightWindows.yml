@@ -1,4 +1,4 @@
-name: Playwright-Java Tests
+name: Playwright-Java Tests on Windows
 on:
   push:
     branches: [ main ]
