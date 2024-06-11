@@ -65,14 +65,12 @@ public class HomePage {
             if(randomElement.locator("a").isHidden()){
                 randomElement.waitFor();
                 randomElement.hover();
-                randomElement.waitFor();
                 randomElement.locator("button").click();
                 page.waitForSelector(".toast.toast-success .message").waitForElementState(ElementState.STABLE);
             }
             else{
                 randomElement.waitFor();
                 randomElement.hover();
-                randomElement.waitFor();
                 randomElement.locator("a").click();
                 page.getByLabel("Add to cart").click();
                 page.waitForSelector(".css-1arl00l p").waitForElementState(ElementState.VISIBLE);
