@@ -25,13 +25,13 @@ public class Playwrightinit {
                      //setChannel("chrome")
             break;
             case "firefox":
-            browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+            browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(true));
             break;
             case "webkit":
             browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(true));
             break;
             case "chrome":
-            browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
+            browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(true));
             break;
         
             default:
