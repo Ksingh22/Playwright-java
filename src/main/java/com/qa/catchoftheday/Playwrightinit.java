@@ -18,13 +18,13 @@ public class Playwrightinit {
 
         switch (browserName.toLowerCase()) {
             case "chromium":
-            browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)); //setChannel("chrome")
+            browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true)); //setChannel("chrome")
             break;
             case "firefox":
-            browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+            browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(true));
             break;
             case "webkit":
-            browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
+            browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(true));
             break;
         
             default:
