@@ -13,16 +13,36 @@ public class HomePageTest {
     @BeforeTest
     public void setUp(){
         pf = new Playwrightinit();
-        page = pf.initBrowser("chromium");
+        page = pf.initBrowser("firefox");
         homePage = new HomePage(page);
 
     }
     @Test 
-    public void TestLadingPage() throws InterruptedException{
+    public void TestDealsFromCatch() throws InterruptedException{
         homePage.clickHeaderLinks("Clearance");
         homePage.clickEventBanner(2);
         homePage.clickdealsfromfilter("Catch");
-        int productsToAdd = 3;
+        int productsToAdd = 2;
+        homePage.addRandomProductsToCart(productsToAdd);
+        homePage.clickCartIcon();
+        assertThat(homePage.shoppingCartTitle()).isVisible();;
+    }
+    @Test 
+    public void TestDealsFromMarketplace() throws InterruptedException{
+        homePage.clickHeaderLinks("Clearance");
+        homePage.clickEventBanner(2);
+        homePage.clickdealsfromfilter("Marketplace");
+        int productsToAdd = 2;
+        homePage.addRandomProductsToCart(productsToAdd);
+        homePage.clickCartIcon();
+        assertThat(homePage.shoppingCartTitle()).isVisible();;
+    }
+    @Test 
+    public void TestEOFYSaleDealsFromMarketplace() throws InterruptedException{
+        homePage.clickHeaderLinks("EOFY Sale");
+        homePage.clickEventBanner(2);
+        homePage.clickdealsfromfilter("Marketplace");
+        int productsToAdd = 2;
         homePage.addRandomProductsToCart(productsToAdd);
         homePage.clickCartIcon();
         assertThat(homePage.shoppingCartTitle()).isVisible();;

@@ -26,6 +26,9 @@ public class Playwrightinit {
             case "webkit":
             browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(true));
             break;
+            case "chrome":
+            browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
+            break;
         
             default:
                 break;
