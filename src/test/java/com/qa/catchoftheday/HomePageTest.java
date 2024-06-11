@@ -50,6 +50,7 @@ public class HomePageTest {
 
     @Test
     public void TestEventBanner(){
+        homePage.clickHeaderLinks("Today's Deals");
         homePage.clickEventBanner(2);
     }
 
@@ -57,8 +58,5 @@ public class HomePageTest {
     public void tearDown(){
         page.context().browser().close();
     }
-
-
-
 
 }
