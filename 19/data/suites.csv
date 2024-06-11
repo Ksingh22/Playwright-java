@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Jun 11 11:23:18 GMT 2024","Tue Jun 11 11:23:39 GMT 2024","21315","Surefire suite","Surefire test","com.qa.catchoftheday.HomePageTest","com.qa.catchoftheday.HomePageTest","TestEOFYSaleDealsFromMarketplace","TestEOFYSaleDealsFromMarketplace",""
+"passed","Tue Jun 11 11:23:39 GMT 2024","Tue Jun 11 11:23:44 GMT 2024","4836","Surefire suite","Surefire test","com.qa.catchoftheday.HomePageTest","com.qa.catchoftheday.HomePageTest","TestEventBanner","TestEventBanner",""
+"passed","Tue Jun 11 11:22:42 GMT 2024","Tue Jun 11 11:23:18 GMT 2024","35940","Surefire suite","Surefire test","com.qa.catchoftheday.HomePageTest","com.qa.catchoftheday.HomePageTest","TestDealsFromMarketplace","TestDealsFromMarketplace",""
+"passed","Tue Jun 11 11:22:02 GMT 2024","Tue Jun 11 11:22:42 GMT 2024","39668","Surefire suite","Surefire test","com.qa.catchoftheday.HomePageTest","com.qa.catchoftheday.HomePageTest","TestDealsFromCatch","TestDealsFromCatch",""
