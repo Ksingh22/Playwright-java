@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import com.microsoft.playwright.Page;
 import com.qa.catchoftheday.pages.HomePage;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
 public class HomePageTest {
     Playwrightinit pf;
     Page page;
@@ -13,11 +14,11 @@ public class HomePageTest {
     @BeforeTest
     public void setUp(){
         pf = new Playwrightinit();
-        page = pf.initBrowser("firefox");
+        page = pf.initBrowser("firefox", true);
         homePage = new HomePage(page);
 
     }
-    @Test 
+    @Test(description = "Test User should be able to add deals from Filter -> catch")
     public void TestDealsFromCatch() throws InterruptedException{
         homePage.clickHeaderLinks("Clearance");
         homePage.clickEventBanner(2);

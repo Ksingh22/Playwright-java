@@ -12,7 +12,7 @@ public class Playwrightinit {
     BrowserContext browserContext;
     Page page;
 
-    public Page initBrowser(String browserName){
+    public Page initBrowser(String browserName, boolean headless){
         System.out.println("browser name is: " + browserName);
         playwright = Playwright.create();
 
@@ -20,14 +20,14 @@ public class Playwrightinit {
             case "chromium":
             browser = playwright.chromium().launch(new BrowserType
                     .LaunchOptions()
-                    .setHeadless(true)
+                    .setHeadless(headless)
                     .setSlowMo(2000));
                      //setChannel("chrome")
             break;
             case "firefox":
             browser = playwright.firefox().launch(new BrowserType
                     .LaunchOptions()
-                    .setHeadless(true)
+                    .setHeadless(headless)
                     .setSlowMo(2000));
             break;
             case "webkit":
@@ -46,3 +46,12 @@ public class Playwrightinit {
         return page;
     }
 }
+// browserContext = browser.newContext();
+// browserContext.tracing().start(new Tracing.StartOptions()
+// .setScreenshots(true)
+// .setSnapshots(true));   
+// page = browserContext.newPage();
+// page.navigate("https://www.catch.com.au/");
+// browserContext.tracing().stop(new Tracing.StopOptions()
+// .setPath(Paths.get("trace.zip")));
+// return page;
